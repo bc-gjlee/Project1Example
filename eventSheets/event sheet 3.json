@@ -1,0 +1,610 @@
+{
+	"name": "Event sheet 3",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 173661467553244,
+					"parameters": {
+						"object": "LavaFall"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Player",
+					"sid": 679356858836395,
+					"parameters": {
+						"object": "DeathParticle",
+						"layer": "1",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "shake",
+					"objectClass": "Player",
+					"sid": 901377442825013,
+					"behaviorType": "ScrollTo",
+					"parameters": {
+						"magnitude": "20",
+						"duration": "0.4",
+						"mode": "reducing-magnitude"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 474243732393496,
+					"parameters": {
+						"audio-file": "Hit_hurt 1",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Player",
+					"sid": 813021863346495
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 952858183205959,
+					"parameters": {
+						"seconds": "0.3"
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 225425883720495
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 659653638405247
+				}
+			],
+			"sid": 914116834449185
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [],
+			"sid": 521918209936353
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 995946594918414,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player",
+					"sid": 797639499828292,
+					"parameters": {
+						"state": "mirrored"
+					}
+				}
+			],
+			"sid": 723234708980361
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 498561999903967,
+					"parameters": {
+						"key": 39
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player",
+					"sid": 277582761715097,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				}
+			],
+			"sid": 917834960900279
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 662369043716331
+				}
+			],
+			"actions": [
+				{
+					"id": "add-object-to-target",
+					"objectClass": "4WayShoot",
+					"sid": 181438551729258,
+					"behaviorType": "Turret",
+					"parameters": {
+						"target": "Player"
+					}
+				}
+			],
+			"sid": 162724643461038
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-target",
+					"objectClass": "4WayShoot",
+					"sid": 868918019645158,
+					"behaviorType": "Turret"
+				},
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 966709664227784,
+					"parameters": {
+						"interval-seconds": "1.0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "4WayShoot",
+					"sid": 632027478745008,
+					"parameters": {
+						"object": "ballAttack",
+						"layer": "1",
+						"image-point": "1",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "4WayShoot",
+					"sid": 355336317439761,
+					"parameters": {
+						"object": "ballAttack2",
+						"layer": "1",
+						"image-point": "2",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "4WayShoot",
+					"sid": 991064672471125,
+					"parameters": {
+						"object": "ballAttack3",
+						"layer": "1",
+						"image-point": "3",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "4WayShoot",
+					"sid": 179852761404669,
+					"parameters": {
+						"object": "ballAttack4",
+						"layer": "1",
+						"image-point": "4",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "ballAttack",
+					"sid": 241229451256429,
+					"parameters": {
+						"angle": "45"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "ballAttack2",
+					"sid": 569677382628572,
+					"parameters": {
+						"angle": "135"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "ballAttack3",
+					"sid": 547004860016856,
+					"parameters": {
+						"angle": "225"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "ballAttack4",
+					"sid": 315011056507203,
+					"parameters": {
+						"angle": "315"
+					}
+				}
+			],
+			"sid": 489834406030396
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 910819890962966,
+					"parameters": {
+						"object": "Goal"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 819098016063843,
+					"parameters": {
+						"variable": "PointCounter",
+						"comparison": 0,
+						"value": "3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 856017113180419,
+					"parameters": {
+						"layout": "TheEnd"
+					}
+				}
+			],
+			"sid": 213010162714920
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 533302252356347,
+					"parameters": {
+						"object": "Points"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Points",
+					"sid": 469775750200295
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 100220810308609,
+					"parameters": {
+						"variable": "PointCounter",
+						"value": "1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 236996879306909,
+					"parameters": {
+						"audio-file": "JUMP MODE",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 552005118824383
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 549159323410152,
+					"parameters": {
+						"object": "ballAttack"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Player",
+					"sid": 593821894334345,
+					"parameters": {
+						"object": "DeathParticle",
+						"layer": "1",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "shake",
+					"objectClass": "Player",
+					"sid": 836039208453320,
+					"behaviorType": "ScrollTo",
+					"parameters": {
+						"magnitude": "20",
+						"duration": "0.4",
+						"mode": "reducing-magnitude"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 157935779903943,
+					"parameters": {
+						"audio-file": "Hit_hurt 1",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Player",
+					"sid": 875254880933262
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 637471903913818,
+					"parameters": {
+						"seconds": "0.3"
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 189889458475238
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 248345451243125
+				}
+			],
+			"sid": 525674674470913
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 220750694283502,
+					"parameters": {
+						"object": "ballAttack2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Player",
+					"sid": 595304834921601,
+					"parameters": {
+						"object": "DeathParticle",
+						"layer": "1",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "shake",
+					"objectClass": "Player",
+					"sid": 720917068695862,
+					"behaviorType": "ScrollTo",
+					"parameters": {
+						"magnitude": "20",
+						"duration": "0.4",
+						"mode": "reducing-magnitude"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 729661045348668,
+					"parameters": {
+						"audio-file": "Hit_hurt 1",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Player",
+					"sid": 730283195368665
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 279059742363715,
+					"parameters": {
+						"seconds": "0.3"
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 830416894262761
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 734463979172911
+				}
+			],
+			"sid": 586273819263887
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 425502464548106,
+					"parameters": {
+						"object": "ballAttack3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Player",
+					"sid": 895194090827592,
+					"parameters": {
+						"object": "DeathParticle",
+						"layer": "1",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "shake",
+					"objectClass": "Player",
+					"sid": 762219914965833,
+					"behaviorType": "ScrollTo",
+					"parameters": {
+						"magnitude": "20",
+						"duration": "0.4",
+						"mode": "reducing-magnitude"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 841563468773503,
+					"parameters": {
+						"audio-file": "Hit_hurt 1",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Player",
+					"sid": 163241367118596
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 870928988782047,
+					"parameters": {
+						"seconds": "0.3"
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 203811848786192
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 921501341695813
+				}
+			],
+			"sid": 888477138113622
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 659135994614745,
+					"parameters": {
+						"object": "ballAttack4"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Player",
+					"sid": 356046621788681,
+					"parameters": {
+						"object": "DeathParticle",
+						"layer": "1",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "shake",
+					"objectClass": "Player",
+					"sid": 733962773304880,
+					"behaviorType": "ScrollTo",
+					"parameters": {
+						"magnitude": "20",
+						"duration": "0.4",
+						"mode": "reducing-magnitude"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 423858701012437,
+					"parameters": {
+						"audio-file": "Hit_hurt 1",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 489746009383494,
+					"parameters": {
+						"seconds": "0.3"
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 752598698983564
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 542361668664283
+				}
+			],
+			"sid": 689156282408456
+		}
+	],
+	"sid": 217761930682670
+}

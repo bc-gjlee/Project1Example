@@ -1,0 +1,37 @@
+{
+	"name": "Points",
+	"plugin-id": "Sprite",
+	"sid": 802734440636555,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 93,
+						"height": 117,
+						"originX": 0.6559139784946236,
+						"originY": 0.37606837606837606,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2970306,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 985651336125927,
+				"name": "Point",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,78 @@
+{
+	"name": "Event sheet 4",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 477141858819321,
+					"parameters": {
+						"object": "Goal"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 871202840045676,
+					"parameters": {
+						"layout": "Confusion"
+					}
+				}
+			],
+			"sid": 975410366739150
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 868921180814676,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player",
+					"sid": 481602202959627,
+					"parameters": {
+						"state": "mirrored"
+					}
+				}
+			],
+			"sid": 296662535907053
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 239575893947048,
+					"parameters": {
+						"key": 39
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player",
+					"sid": 178577225866957,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				}
+			],
+			"sid": 889602447508570
+		}
+	],
+	"sid": 930455943326161
+}

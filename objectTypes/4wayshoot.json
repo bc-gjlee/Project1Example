@@ -1,0 +1,70 @@
+{
+	"name": "4WayShoot",
+	"plugin-id": "Sprite",
+	"sid": 952095007365508,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Turret",
+			"name": "Turret",
+			"sid": 757980787716150
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 563953712537481
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 109,
+						"height": 104,
+						"originX": 0.4678899082568808,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 39143,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.7981651376146789,
+								"y": 0.8557692307692307
+							},
+							{
+								"name": "Image Point 2",
+								"x": 0.1834862385321101,
+								"y": 0.8173076923076923
+							},
+							{
+								"name": "Image Point 3",
+								"x": 0.15596330275229353,
+								"y": 0.16346153846153844
+							},
+							{
+								"name": "Image Point 4",
+								"x": 0.8440366972477065,
+								"y": 0.1826923076923077
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 140132179831956,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

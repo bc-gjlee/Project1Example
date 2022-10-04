@@ -1,0 +1,29 @@
+{
+	"name": "Warning",
+	"plugin-id": "TiledBg",
+	"sid": 101621401920667,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "glowvertical",
+			"name": "GlowVertical"
+		},
+		{
+			"effectId": "glowhorizontal",
+			"name": "GlowHorizontal"
+		}
+	],
+	"image": {
+		"width": 149,
+		"height": 144,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 7148453,
+		"useCollisionPoly": true
+	}
+}

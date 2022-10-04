@@ -1,0 +1,20 @@
+{
+	"name": "LevelStress",
+	"plugin-id": "TiledBg",
+	"sid": 372066530350340,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 250,
+		"height": 250,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 5287715,
+		"useCollisionPoly": true
+	}
+}

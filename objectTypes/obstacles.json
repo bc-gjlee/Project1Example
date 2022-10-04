@@ -1,0 +1,48 @@
+{
+	"name": "Obstacles",
+	"plugin-id": "Sprite",
+	"sid": 517574648814241,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 540574053962893
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 734046422689119
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 205,
+						"height": 39,
+						"originX": 0.48292682926829267,
+						"originY": 1.3846153846153846,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6977950,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 755841078852842,
+				"name": "Obstacles",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

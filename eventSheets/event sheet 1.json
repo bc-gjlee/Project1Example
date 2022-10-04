@@ -1,0 +1,457 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "PointCounter",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Counts the number of coins collected",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 532913470129930
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 195243906346943,
+					"parameters": {
+						"object": "Enemy1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Enemy1",
+					"sid": 902842123184558
+				}
+			],
+			"sid": 199457842949072
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 761963223760196,
+					"parameters": {
+						"object": "Points"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Points",
+					"sid": 965770573957978
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 811214087921243,
+					"parameters": {
+						"variable": "PointCounter",
+						"value": "1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 498096280305429,
+					"parameters": {
+						"audio-file": "JUMP MODE",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 466158612944216
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 176626779630518,
+					"parameters": {
+						"object": "Goal"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 983379576350122,
+					"parameters": {
+						"variable": "PointCounter",
+						"comparison": 0,
+						"value": "3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 843277218498927,
+					"parameters": {
+						"layout": "Anxiety"
+					}
+				}
+			],
+			"sid": 135465681734309
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 951017708992489,
+					"parameters": {
+						"object": "LavaFall"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Player",
+					"sid": 247262458233442,
+					"parameters": {
+						"object": "DeathParticle",
+						"layer": "1",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "shake",
+					"objectClass": "Player",
+					"sid": 123902267362519,
+					"behaviorType": "ScrollTo",
+					"parameters": {
+						"magnitude": "20",
+						"duration": "0.4",
+						"mode": "reducing-magnitude"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 257174601352249,
+					"parameters": {
+						"audio-file": "Hit_hurt 1",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 767654974155644,
+					"parameters": {
+						"seconds": "0.3"
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 972008845651239
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 677682495034732
+				}
+			],
+			"sid": 630496587160061
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 937250336797660,
+					"parameters": {
+						"object": "ballAttack"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Player",
+					"sid": 228553570178678,
+					"parameters": {
+						"object": "DeathParticle",
+						"layer": "1",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "shake",
+					"objectClass": "Player",
+					"sid": 918132717433481,
+					"behaviorType": "ScrollTo",
+					"parameters": {
+						"magnitude": "20",
+						"duration": "0.4",
+						"mode": "reducing-magnitude"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 665330689141093,
+					"parameters": {
+						"audio-file": "Hit_hurt 1",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Player",
+					"sid": 647550858995908
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 776372405839055,
+					"parameters": {
+						"seconds": "0.3"
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 443879519823286
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 198799649155324
+				}
+			],
+			"sid": 604877616711774
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 898755800794369
+				}
+			],
+			"actions": [
+				{
+					"id": "add-object-to-target",
+					"objectClass": "Enemy1",
+					"sid": 879078403456549,
+					"behaviorType": "Turret",
+					"parameters": {
+						"target": "Player"
+					}
+				}
+			],
+			"sid": 391503043948520
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-target",
+					"objectClass": "Enemy1",
+					"sid": 129873954179635,
+					"behaviorType": "Turret"
+				},
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 796549938741492,
+					"parameters": {
+						"interval-seconds": "1.0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Enemy1",
+					"sid": 853959818984275,
+					"parameters": {
+						"object": "ballAttack",
+						"layer": "1",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "ballAttack",
+					"sid": 222762157252391,
+					"parameters": {
+						"x": "0",
+						"y": "0"
+					}
+				}
+			],
+			"sid": 627856802323232
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-button-down",
+					"objectClass": "xboxcontroller",
+					"sid": 983384522508579,
+					"parameters": {
+						"gamepad": "0",
+						"button": "d-pad-right"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 457010791344714,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "right"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player",
+					"sid": 160828673970817,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				}
+			],
+			"sid": 468156443014834
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-button-down",
+					"objectClass": "xboxcontroller",
+					"sid": 696041662296577,
+					"parameters": {
+						"gamepad": "0",
+						"button": "d-pad-left"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 652613464842306,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "left"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player",
+					"sid": 526735339172218,
+					"parameters": {
+						"state": "mirrored"
+					}
+				}
+			],
+			"sid": 703744952820349
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-button-pressed",
+					"objectClass": "xboxcontroller",
+					"sid": 292280400372521,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-a"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 150507515908882,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "jump"
+					}
+				}
+			],
+			"sid": 110697597657209
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 905585085748561,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player",
+					"sid": 398955186678933,
+					"parameters": {
+						"state": "mirrored"
+					}
+				}
+			],
+			"sid": 123119518250906
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 770434690544472,
+					"parameters": {
+						"key": 39
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player",
+					"sid": 212628655906910,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				}
+			],
+			"sid": 125653690588572
+		}
+	],
+	"sid": 234942233289186
+}

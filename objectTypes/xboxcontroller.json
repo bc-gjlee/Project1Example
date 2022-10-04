@@ -1,0 +1,12 @@
+{
+	"name": "xboxcontroller",
+	"plugin-id": "gamepad",
+	"sid": 384781488458219,
+	"singleglobal-inst": {
+		"type": "xboxcontroller",
+		"properties": {
+			"analog-deadzone": 25
+		},
+		"uid": 24
+	}
+}

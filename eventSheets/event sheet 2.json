@@ -1,0 +1,892 @@
+{
+	"name": "Event sheet 2",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "DirectionChange",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Causes the player to look in a different direction from left to right"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 867149960046963
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Light",
+							"sid": 493580928066717,
+							"parameters": {
+								"object": "Player",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 166213277361331
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 399211589051883,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player",
+							"sid": 774607153754550,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 710931918233477
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 342862221961584,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player",
+							"sid": 868266353778353,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 269562764107840
+				}
+			],
+			"sid": 143025804839339
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "4WayShooter",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 220477985017335
+						}
+					],
+					"actions": [
+						{
+							"id": "add-object-to-target",
+							"objectClass": "4WayShoot",
+							"sid": 739916515196643,
+							"behaviorType": "Turret",
+							"parameters": {
+								"target": "Player"
+							}
+						}
+					],
+					"sid": 761688825382038
+				},
+				{
+					"eventType": "comment",
+					"text": "This is how the enemy attacks in a 4 way"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-target",
+							"objectClass": "4WayShoot",
+							"sid": 387652090340927,
+							"behaviorType": "Turret"
+						},
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 324933713070900,
+							"parameters": {
+								"interval-seconds": "1.0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "4WayShoot",
+							"sid": 592060677676913,
+							"parameters": {
+								"object": "ballAttack",
+								"layer": "1",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "4WayShoot",
+							"sid": 900938506584320,
+							"parameters": {
+								"object": "ballAttack2",
+								"layer": "1",
+								"image-point": "2",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "4WayShoot",
+							"sid": 224048089394157,
+							"parameters": {
+								"object": "ballAttack3",
+								"layer": "1",
+								"image-point": "3",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "4WayShoot",
+							"sid": 610129373324634,
+							"parameters": {
+								"object": "ballAttack4",
+								"layer": "1",
+								"image-point": "4",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "ballAttack",
+							"sid": 966789068130313,
+							"parameters": {
+								"angle": "45"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "ballAttack2",
+							"sid": 355601347550792,
+							"parameters": {
+								"angle": "135"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "ballAttack3",
+							"sid": 618926156685434,
+							"parameters": {
+								"angle": "225"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "ballAttack4",
+							"sid": 618520549089065,
+							"parameters": {
+								"angle": "315"
+							}
+						}
+					],
+					"sid": 251875732046451
+				}
+			],
+			"sid": 668481372544644
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "DeathCollision1",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "This kills the player if it hits the first attack"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 138387553443382,
+							"parameters": {
+								"object": "ballAttack"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player",
+							"sid": 612018175278220,
+							"parameters": {
+								"object": "DeathParticle",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "shake",
+							"objectClass": "Player",
+							"sid": 985561110774266,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"magnitude": "20",
+								"duration": "0.4",
+								"mode": "reducing-magnitude"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 113478440452621,
+							"parameters": {
+								"audio-file": "Hit_hurt 1",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Player",
+							"sid": 969817733730867
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 944310114730939,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 951409604307090
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 972093687342538
+						}
+					],
+					"sid": 190059633859307
+				}
+			],
+			"sid": 724065685639485
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "DeathCollision2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "This kills the player if it hits the second attack"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 990895138590498,
+							"parameters": {
+								"object": "ballAttack2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player",
+							"sid": 970919842429095,
+							"parameters": {
+								"object": "DeathParticle",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "shake",
+							"objectClass": "Player",
+							"sid": 652734438535592,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"magnitude": "20",
+								"duration": "0.4",
+								"mode": "reducing-magnitude"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 440219731709326,
+							"parameters": {
+								"audio-file": "Hit_hurt 1",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Player",
+							"sid": 718681386850581
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 935729196406057,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 497918250828673
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 484772581798752
+						}
+					],
+					"sid": 461167014305885
+				}
+			],
+			"sid": 814092454328829
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "DeathCollision3",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "This kills the player if it hits the third attack"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 859337105213074,
+							"parameters": {
+								"object": "ballAttack3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player",
+							"sid": 875069302764320,
+							"parameters": {
+								"object": "DeathParticle",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "shake",
+							"objectClass": "Player",
+							"sid": 752663871523386,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"magnitude": "20",
+								"duration": "0.4",
+								"mode": "reducing-magnitude"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 807250489922937,
+							"parameters": {
+								"audio-file": "Hit_hurt 1",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Player",
+							"sid": 541143376353850
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 622846360172843,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 716795582328498
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 941179735589513
+						}
+					],
+					"sid": 367250885843740
+				}
+			],
+			"sid": 599914947983410
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "DeathCollision4",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "This kills the player if it hits the fourth attack"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 264756559339791,
+							"parameters": {
+								"object": "ballAttack4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player",
+							"sid": 959542885935319,
+							"parameters": {
+								"object": "DeathParticle",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "shake",
+							"objectClass": "Player",
+							"sid": 626512933077991,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"magnitude": "20",
+								"duration": "0.4",
+								"mode": "reducing-magnitude"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 292585434229630,
+							"parameters": {
+								"audio-file": "Hit_hurt 1",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Player",
+							"sid": 963080893701456
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 882667186706224,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 393464219631817
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 308576418134016
+						}
+					],
+					"sid": 747512264661444
+				}
+			],
+			"sid": 675279324853037
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LavaJumpDeath",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "This kills the player if it touches them"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 642896219911042,
+							"parameters": {
+								"object": "FlameJumper"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player",
+							"sid": 921788146394691,
+							"parameters": {
+								"object": "DeathParticle",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "shake",
+							"objectClass": "Player",
+							"sid": 252893415039508,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"magnitude": "20",
+								"duration": "0.4",
+								"mode": "reducing-magnitude"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 888577224367653,
+							"parameters": {
+								"audio-file": "Hit_hurt 1",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Player",
+							"sid": 975965961596005
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 970704138769938,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 764363397638474
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 338781569518807
+						}
+					],
+					"sid": 910634153066244
+				}
+			],
+			"sid": 366486129536088
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Point Counter",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Counts the amount of points you collect"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 760853757241649,
+							"parameters": {
+								"object": "Points"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Points",
+							"sid": 598415166496747
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 363091167980747,
+							"parameters": {
+								"variable": "PointCounter",
+								"value": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 395488574272379,
+							"parameters": {
+								"audio-file": "JUMP MODE",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 994898392905545
+				}
+			],
+			"sid": 365757794736471
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LavaDeath",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "This kills the player if they fall"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 701379290540360,
+							"parameters": {
+								"object": "LavaFall"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player",
+							"sid": 610130175647597,
+							"parameters": {
+								"object": "DeathParticle",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "shake",
+							"objectClass": "Player",
+							"sid": 742792541162158,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"magnitude": "20",
+								"duration": "0.4",
+								"mode": "reducing-magnitude"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 265779236525288,
+							"parameters": {
+								"audio-file": "Hit_hurt 1",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Player",
+							"sid": 126425083500533
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 860935917391920,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 796997407345918
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 814986726515406
+						}
+					],
+					"sid": 364274822276644
+				}
+			],
+			"sid": 488967775932479
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 297421001747106,
+					"parameters": {
+						"object": "Enemy1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Enemy1",
+					"sid": 221328376364238
+				}
+			],
+			"sid": 192005244512944
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 902996046895657,
+					"parameters": {
+						"object": "Goal"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 528123040055282,
+					"parameters": {
+						"variable": "PointCounter",
+						"comparison": 0,
+						"value": "3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 603915195214645,
+					"parameters": {
+						"layout": "Stress"
+					}
+				}
+			],
+			"sid": 254511958327153
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-target",
+					"objectClass": "Enemy1",
+					"sid": 382474182600835,
+					"behaviorType": "Turret"
+				},
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 320432507323411,
+					"parameters": {
+						"interval-seconds": "1.0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Enemy1",
+					"sid": 475046996214144,
+					"parameters": {
+						"object": "ballAttack",
+						"layer": "1",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "ballAttack",
+					"sid": 231200552033027,
+					"parameters": {
+						"x": "0",
+						"y": "0"
+					}
+				}
+			],
+			"sid": 898305402408358
+		}
+	],
+	"sid": 530697757204499
+}
