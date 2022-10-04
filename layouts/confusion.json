@@ -1042,6 +1042,106 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "Obstacles",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Obstacles",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 70,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 672,
+						"y": 147,
+						"width": 192,
+						"height": 32,
+						"originX": 0.48292682926829267,
+						"originY": 1.3846153846153846,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 3.1303828503367495,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Obstacles",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Obstacles",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 71,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 1356,
+						"y": 247,
+						"width": 192,
+						"height": 32,
+						"originX": 0.48292682926829267,
+						"originY": 1.3846153846153846,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 3.1303828503367495,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 855457215423229,
